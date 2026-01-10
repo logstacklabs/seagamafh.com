@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+    --color-canvas-alt: #EFEBE4;
+    --color-canvas-card: #FFFFFF;
+    --color-canvas-page: #F9F7F2;
+    
+    --color-text-main: #2D3033;
+    --color-text-muted: #54585C;
+    --color-text-on-dark: #FFFFFF;
+    
+    /* Accents */
+    --color-brand-primary: #355047;
+    --color-brand-secondary: #C06C55;
+    --color-brand-tertiary: #E6C88B;
+    --color-decorative-plant: #6B8C82;
+    --color-brand-accent-sub: #8F4C3B;
+    
+    /* Interactive */
+    --color-btn-cta: #A65B46;
+    --color-btn-cta-hover: #8F4C3B;
+    --color-btn-secondary-hover: #F2F0EB;
+    --color-focus-ring: rgba(192, 108, 85, 0.6);
+    
+    /* Form Feedback/Status */
+    --color-status-error: #FDE8E8;
+    --color-status-success: #E3F0E6;
+    
+    /* Shadows */
+    --shadow-soft: 0 8px 30px rgba(0,0,0,0.04);
+    --shadow-medium: 0 15px 40px -10px rgba(53, 80, 71, 0.1);
+    
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+@layer base {
+    *, *::before, *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html {
+        -webkit-text-size-adjust: 100%;
+        scroll-behavior: smooth;
+        scroll-padding-top: 2.75rem;
+        overflow-x: hidden;
+    }
+    
+    body {
+        scroll-behavior: smooth;
+        background-color: #F9F7F2;
+        color: #2D3033;
+        
+        transition: all .3s ease;
+        font-weight: 400;
+        margin: 0;
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #F9F7F2;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #CDC9C3;
+        border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #A65B46;
+    }
+}
