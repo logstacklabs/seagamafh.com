@@ -9,7 +9,7 @@ import { siteConfig } from "@/config/site.config";
  * * Usage: Import and add to your RootLayout in src/app/layout.tsx
  */
 export default function Analytics() {
-	const { googleAnalyticsId, cloudflareToken, goatCounterCode } = siteConfig.analytics;
+	const { googleAnalyticsId, cloudflareToken } = siteConfig.analytics;
 	
 	return (
 		<>
@@ -44,16 +44,6 @@ export default function Analytics() {
 					strategy="afterInteractive"
 					src="https://static.cloudflareinsights.com/beacon.min.js"
 					data-cf-beacon={`{"token": "${cloudflareToken}"}`}
-				/>
-			)}
-			
-			{/* --- GoatCounter Analytics --- */}
-			{goatCounterCode && (
-				<Script
-					data-goatcounter={`https://${goatCounterCode}.goatcounter.com/count`}
-					async
-					strategy="afterInteractive"
-					src="//gc.zgo.at/count.js"
 				/>
 			)}
 		</>

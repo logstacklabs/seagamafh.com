@@ -62,9 +62,8 @@ export const siteConfig: SiteConfig = {
 	
 	// 1. ANALYTICS CONFIGURATION
 	analytics: {
-		googleAnalyticsId: publicEnv.GA_ID,//'G-EXAMPLE123',
-		cloudflareToken: publicEnv.TURNSTILE_SITE_KEY,
-		goatCounterCode: '',
+		googleAnalyticsId: publicEnv.GA_ID,
+		cloudflareToken: publicEnv.CLOUDFLARE_ANALYTICS_TOKEN,
 	},
 	
 	// 2. ADVANCED FAVICON CONFIGURATION

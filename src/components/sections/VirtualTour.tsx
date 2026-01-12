@@ -1,8 +1,7 @@
 "use client";
 
-import Image from 'next/image';
 import React, { useState } from 'react';
-import { motion, AnimatePresence, Variants } from 'framer-motion';
+import { motion, AnimatePresence, Variants, PanInfo } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Camera, Maximize2 } from 'lucide-react';
 import { tour } from '@/config/sections.config';
 import { RoomCategory } from '@/types/sections.types';
@@ -32,6 +31,15 @@ const VirtualTour: React.FC = () => {
 		setDirection(0);
 		setActiveCategory(cat);
 		setImageIndex(0);
+	};
+	
+	const onPanEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+		const swipeThreshold = 50;
+		if (info.offset.x < -swipeThreshold) {
+			handleNext();
+		} else if (info.offset.x > swipeThreshold) {
+			handlePrev();
+		}
 	};
 	
 	// Volumetric Camera-Driven Variants
@@ -112,8 +120,9 @@ const VirtualTour: React.FC = () => {
 			
 			{/* 3D Stage Container */}
 			<div className="w-full max-w-6xl mx-auto px-4">
-				<div
-					className="relative aspect-[16/9] w-full rounded-[2.5rem] bg-zinc-900 shadow-2xl border-[6px] border-white/50 overflow-hidden group"
+				<motion.div
+					onPanEnd={onPanEnd}
+					className="relative aspect-[5/4] md:aspect-[16/9] w-full rounded-2xl md:rounded-[2.5rem] bg-zinc-900 shadow-2xl border-[3px] md:border-[6px] border-white/50 overflow-hidden group touch-pan-y"
 					style={{ perspective: '2500px' }} // High perspective for volumetric feel
 				>
 					{/* Ambient Lighting / Vignette */}
@@ -129,16 +138,16 @@ const VirtualTour: React.FC = () => {
 								initial="enter"
 								animate="center"
 								exit="exit"
-								className="absolute w-full h-full rounded-[2rem] overflow-hidden shadow-2xl origin-center will-change-transform"
+								className="absolute w-full h-full rounded-xl md:rounded-[2rem] overflow-hidden shadow-2xl origin-center will-change-transform"
 								style={{
 									transformStyle: "preserve-3d",
 									backfaceVisibility: "hidden",
 								}}
 							>
-								<Image src={`${imgPath}/${currentImage.url}`}
+								<img
+									src={`${imgPath}/${currentImage.url}`}
 								       alt={`${activeCategory} view`}
 								       className="w-full h-full object-cover select-none"
-								       width="1920" height="1080"
 								/>
 								
 								{/* Hotspot Overlay Layer - Only show when focused (center) */}
@@ -167,6 +176,7 @@ const VirtualTour: React.FC = () => {
 												<button
 													onMouseEnter={() => setShowHotspot(i)}
 													onMouseLeave={() => setShowHotspot(null)}
+													onClick={() => setShowHotspot(showHotspot === i ? null : i)} // Mobile toggle support
 													className="relative w-10 h-10 flex items-center justify-center"
 												>
 													{/* Pulsing Rings */}
@@ -199,7 +209,7 @@ const VirtualTour: React.FC = () => {
 					</div>
 					
 					{/* Navigation Controls - Floating on top */}
-					<div className="absolute inset-0 flex items-center justify-between p-4 md:p-8 pointer-events-none z-50">
+					<div className="hidden md:flex absolute inset-0 items-center justify-between p-4 md:p-8 pointer-events-none z-50">
 						<button
 							onClick={handlePrev}
 							className="pointer-events-auto w-12 h-12 md:w-16 md:h-16 rounded-full bg-black/20 backdrop-blur-lg text-white flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all duration-300 shadow-lg hover:shadow-brand-primary/40 border border-white/20 hover:scale-105 group/nav"
@@ -217,7 +227,7 @@ const VirtualTour: React.FC = () => {
 					</div>
 					
 					{/* Cinematic Progress Bar */}
-					<div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-50 bg-black/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+					<div className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 gap-3 z-50 bg-black/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
 						{currentCategoryData.images.map((_, idx) => (
 							<button
 								key={idx}
@@ -235,7 +245,7 @@ const VirtualTour: React.FC = () => {
 						))}
 					</div>
 				
-				</div>
+				</motion.div>
 				
 				{/* Gallery Caption/Context */}
 				<motion.div
