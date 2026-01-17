@@ -18,11 +18,12 @@ export function constructMetadata({
                                   }: MetadataProps = {}): Metadata {
 	
 	const siteName = siteConfig.fullName;
-	const pageTitle = title ? `${title} | ${siteName}` : `${siteName} | ${siteConfig.tagline}`;
+	const siteTitle = `${siteName} | ${siteConfig.tagline}`;
+	const pageTitle = title ? `${title} | ${siteName}` : `${siteTitle}`;
 	
 	return {
 		title: {
-			default: pageTitle,
+			default: `${siteTitle}`,
 			template: `%s | ${siteName}`,
 		},
 		description,
