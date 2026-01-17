@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { footer } from '@/config/sections.config';
 import { siteConfig } from '@/config/site.config';
 
@@ -17,7 +18,7 @@ const Footer: React.FC = () => {
 				<p className="text-white/50 text-sm">{footer.copy}</p>
 				<div className="flex gap-6">
 					{footer.links.map((link, idx) => (
-						<a key={idx} href={link.href} className="text-white/70 hover:text-brand-tertiary transition-colors">{link.text}</a>
+						<Link key={idx} href={link.href} className="text-white/70 hover:text-brand-tertiary transition-colors text-sm">{link.text}</Link>
 					))}
 				</div>
 			</div>

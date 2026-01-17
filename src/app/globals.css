@@ -48,8 +48,8 @@
     
     body {
         scroll-behavior: smooth;
-        background-color: #F9F7F2;
-        color: #2D3033;
+        /*background-color: #F9F7F2;
+        color: #2D3033;*/
         
         transition: all .3s ease;
         font-weight: 400;

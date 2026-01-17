@@ -1,33 +1,25 @@
 import {
 	SiteConfig,
-	Locale,
 	BaseURL
 } from '@/types/seo.types';
-import { publicEnv } from "@/env/public";
+import { publicEnv } from '@/env/public';
 
-export const locale: Locale = 'en_US';
 export const baseURL: BaseURL = publicEnv.SITE_BASE_URL;
 
 export const siteConfig: SiteConfig = {
 	name: 'Seagam',
 	subName: 'AFH',
-	//shortName: 'Seagam',
+	fullName: 'Seagam AFH',
 	description:
 		'A premier Adult Family Care Home providing compassionate, 24/7 personalized care in Seattle, WA.',
 	url: `${baseURL}`,
+	locale: 'en_US',
 	logo: '/images/others/logo.png',
-	tagline: 'Compassionate Care In aFamily Setting',
+	tagline: 'Compassionate Care In a Family Setting',
 	ogImage: `${baseURL}/icons/og-img.jpg`,
 	tcImage: `${baseURL}/icons/tc-img.jpg`,
 	keywords: [
-		'Adult Family Home', 'Nursing Home', 'Senior Care', 'Adult Family Care',
-		'Elderly Nursing Home', 'Quality Senior Caregiving Services',
-		
-		'adult family care home near me', 'adult foster care near me',
-		'senior care home near me', 'elderly care home near me',
-		'assisted living near me', 'local adult care home',
-		'neighborhood senior care', 'community senior living',
-		'residential care near me'
+		'Adult Family Home', 'Nursing Home', 'Senior Care', 'Adult Family Care', 'Elderly Nursing Home', 'Quality Senior Caregiving Services', 'adult family care home near me', 'adult foster care near me', 'senior care home near me', 'elderly care home near me', 'assisted living near me', 'local adult care home', 'neighborhood senior care', 'community senior living', 'residential care near me'
 	],
 	themeColor: '#F9F7F2',
 	
@@ -127,8 +119,8 @@ export const siteConfig: SiteConfig = {
 		},
 	},
 	authors: [
-		{ name: 'Seagam AFH' },
-		{ name: 'Abdoulie Jawara' }
+		{ name: 'Abdoulie Jawara' },
+		{ name: 'Seagam AFH', url: 'https://seagamafh.com' }
 	],
-	creator: 'Seagam AFH',
+	creator: 'Seagam AFH LLC',
 };

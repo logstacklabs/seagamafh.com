@@ -8,12 +8,12 @@ import {
 
 
 export const navigations: NavContentConfig = [
-	{ name: 'Home', href: '#home', id: 'home' },
-	{ name: 'About', href: '#about', id: 'about' },
-	{ name: 'Virtual Tour', href: '#tour', id: 'tour' },
-	{ name: 'Services', href: '#services', id: 'services' },
-	{ name: 'Team', href: '#caregivers', id: 'caregivers' },
-	{ name: 'Contact', href: '#contact', id: 'contact' },
+	{ name: 'Home', href: '/#home', id: 'home' },
+	{ name: 'About', href: '/#about', id: 'about' },
+	{ name: 'Virtual Tour', href: '/#tour', id: 'tour' },
+	{ name: 'Services', href: '/#services', id: 'services' },
+	{ name: 'Team', href: '/#caregivers', id: 'caregivers' },
+	{ name: 'Contact', href: '/#contact', id: 'contact' },
 ];
 export const hero: HeroContentConfig = {
 	badge: 'Welcome to Your New Chapter',
@@ -250,10 +250,12 @@ export const contact: ContactContentConfig = {
 	},
 };
 export const footer: FooterContentConfig = {
-	copy: '©2026 Seagam AFH LLC. All rights reserved. | Licensed by DSHS',
+	copy: '©2026 Seagam AFH LLC. All rights reserved.',
 	links: [
-		{ text: 'Privacy Policy', href: '#' },
-		{ text: 'Resident Rights', href: '#' }
+		{ text: 'Privacy Policy', href: '/privacy' },
+		{ text: 'Terms of Use', href: '/terms' },
+		{ text: 'FAQ', href: '/faq' },
+		{ text: 'Careers', href: '/careers' }
 	]
 };
 

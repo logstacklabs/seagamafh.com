@@ -1,6 +1,6 @@
-export type Locale = string;
+//export type Locale = string;
 export type BaseURL = string;
-export type ISODate = string;
+//export type ISODate = string;
 
 export interface Address {
 	streetAddress: string;
@@ -79,6 +79,7 @@ export interface brand {
 export interface SiteConfig {
 	name: string;
 	subName: string;
+	fullName: string;
 	description: string;
 	url: string;
 	logo: string;
@@ -87,6 +88,7 @@ export interface SiteConfig {
 	keywords: string[];
 	themeColor: string;
 	tagline: string;
+	locale: string;
 	
 	email: string;
 	telephone: string;

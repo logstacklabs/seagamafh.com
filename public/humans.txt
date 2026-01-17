@@ -1,0 +1,16 @@
+/* TEAM */
+Developer: Logstack.
+Site: https://logstack.dev
+Contact: logstacklabs@gmail.com
+Location: Istanbul, Turkey
+
+/* SITE */
+Last update: 2026/01/16
+Language: English
+Doctype: HTML5
+Standards: CSS3, JavaScript, Typescript
+Components: Next.js, React, Tailwind CSS, Framer Motion, Lucide Icons
+Software: Webstorm, Git
+
+/* THANKS */
+Thanks to Next.js & TailwindCSS Documentations.

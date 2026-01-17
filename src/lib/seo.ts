@@ -2,76 +2,85 @@ import { Metadata } from "next";
 import { siteConfig } from "@/config/site.config";
 
 interface MetadataProps {
+	path?: string;
 	title?: string;
 	description?: string;
+	keywords?: string[];
 	image?: string;
-	noIndex?: boolean;
 }
 
-/**
- * Generates a Next.js Metadata object with advanced Favicon and Meta Tag support.
- */
 export function constructMetadata({
-	                                  title = siteConfig.name,
+	                                  path = '/',
+	                                  title = siteConfig.fullName,
 	                                  description = siteConfig.description,
-	                                  //image = siteConfig.ogImage,
-	                                  //noIndex = false,
+	                                  keywords = siteConfig.keywords,
+	                                  image = siteConfig.ogImage
                                   }: MetadataProps = {}): Metadata {
 	
-	// Combine all icon types into the Next.js 'icons' format
-	const icons = {
-		icon: [...siteConfig.favicons.basic, ...siteConfig.favicons.android],
-		apple: siteConfig.favicons.apple,
-	};
+	const siteName = siteConfig.fullName;
+	const pageTitle = title ? `${title} | ${siteName}` : `${siteName} | ${siteConfig.tagline}`;
 	
 	return {
 		title: {
-			default: `${siteConfig.name} | ${siteConfig.tagline}`,
-			template: `%s | ${siteConfig.name}`,
+			default: pageTitle,
+			template: `%s | ${siteName}`,
 		},
 		description,
-		keywords: siteConfig.keywords,
+		keywords,
 		authors: siteConfig.authors,
 		creator: siteConfig.creator,
 		publisher: siteConfig.name,
 		metadataBase: new URL(siteConfig.url),
-		manifest: siteConfig.favicons.manifest, // Link to manifest.json
 		
-		// Robots
 		robots: siteConfig.robots,
 		
-		// Open Graph
 		openGraph: {
-			title: title ? `${title} | ${siteConfig.name}` : siteConfig.name,
+			title: pageTitle,
 			description,
-			url: siteConfig.url,
-			siteName: siteConfig.name,
+			url: `${siteConfig.url}/${path}`,
+			siteName: siteConfig.fullName,
 			images: [
 				{
-					url: siteConfig.ogImage,
+					url: image,
 					width: 1200,
 					height: 630,
-					alt: title || siteConfig.name,
+					alt: `${pageTitle} Open Graph Image`,
 				},
 			],
-			locale: 'en_US',
+			locale: siteConfig.locale,
 			type: 'website',
 		},
 		
 		// Twitter
 		twitter: {
 			card: 'summary_large_image',
-			title: title ? `${title} | ${siteConfig.name}` : siteConfig.name,
+			title: pageTitle,
 			description,
-			images: [],
+			images: {
+				url: siteConfig.tcImage || image,
+				alt: `${pageTitle} Twitter Card Image`,
+			},
 			creator: siteConfig.links.twitter,
 		},
 		
-		// Favicons & Icons
-		icons,
-		
+		icons: {
+			icon: [
+				...siteConfig.favicons.basic,
+				...siteConfig.favicons.android
+			],
+			apple: siteConfig.favicons.apple,
+		},
 		alternates: {
-			canonical: "./",
+			canonical: path,
+		},
+		applicationName: siteConfig.fullName,
+		referrer: 'origin-when-cross-origin',
+		manifest: siteConfig.favicons.manifest,
+		other: {
+			'mobile-web-app-capable': 'yes',
+			'apple-mobile-web-app-capable': 'yes',
+			'apple-mobile-web-app-title': siteConfig.fullName,
+			'apple-mobile-web-app-status-bar-style': 'default',
 		},
 	};
 }

@@ -108,6 +108,7 @@ export interface ContactContentConfig {
 		};
 	};
 }
+
 export interface FooterContentConfig {
 	copy: string;
 	links: { text: string; href: string }[];
