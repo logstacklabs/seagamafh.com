@@ -10,20 +10,19 @@ interface MetadataProps {
 }
 
 export function constructMetadata({
+	                                  title,
 	                                  path = '/',
-	                                  title = siteConfig.fullName,
 	                                  description = siteConfig.description,
 	                                  keywords = siteConfig.keywords,
 	                                  image = siteConfig.ogImage
                                   }: MetadataProps = {}): Metadata {
 	
 	const siteName = siteConfig.fullName;
-	const siteTitle = `${siteName} | ${siteConfig.tagline}`;
-	const pageTitle = title ? `${title} | ${siteName}` : `${siteTitle}`;
+	const pageTitle = title ? `${title} | ${siteName}` : `${siteName} | ${siteConfig.tagline}`;
 	
 	return {
 		title: {
-			default: `${siteTitle}`,
+			default: pageTitle,
 			template: `%s | ${siteName}`,
 		},
 		description,
