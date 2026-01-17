@@ -16,8 +16,8 @@ export const siteConfig: SiteConfig = {
 	locale: 'en_US',
 	logo: '/images/others/logo.png',
 	tagline: 'Compassionate Care In a Family Setting',
-	ogImage: `${baseURL}/icons/og-img.jpg`,
-	tcImage: `${baseURL}/icons/tc-img.jpg`,
+	ogImage: `${baseURL}/icons/og-img.png`,
+	tcImage: `${baseURL}/icons/tc-img.png`,
 	keywords: [
 		'Adult Family Home', 'Nursing Home', 'Senior Care', 'Adult Family Care', 'Elderly Nursing Home', 'Quality Senior Caregiving Services', 'adult family care home near me', 'adult foster care near me', 'senior care home near me', 'elderly care home near me', 'assisted living near me', 'local adult care home', 'neighborhood senior care', 'community senior living', 'residential care near me'
 	],
