@@ -36,7 +36,8 @@ const Team: React.FC = () => {
 				initial="hidden"
 				whileInView="visible"
 				viewport={{ once: true, margin: "-50px" }}
-				className="grid md:grid-cols-3 gap-8 md:gap-12"
+				className="grid grid-cols-[repeat(auto-fit,minmax(min(280px,100%),1fr))] gap-4"
+				//"grid md:grid-cols-3 gap-8 md:gap-12"
 			>
 				{team.members.map((person, idx) => (
 					<motion.div
@@ -64,9 +65,9 @@ const Team: React.FC = () => {
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true }}
 				transition={{ delay: 0.2 }}
-				className="mt-16 text-center max-w-3xl mx-auto bg-canvas-card p-10 rounded-[2rem] shadow-soft border border-canvas-alt relative overflow-hidden"
+				className="mt-16 text-center max-w-3xl mx-auto bg-canvas-card p-10 rounded-4xl shadow-soft border border-canvas-alt relative overflow-hidden"
 			>
-				<div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-primary/50 to-transparent" />
+				<div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-brand-primary/50 to-transparent" />
 				<Quote className="text-brand-primary/20 w-12 h-12 mx-auto mb-4" />
 				<p className="text-xl md:text-2xl font-light text-text-main/80 leading-relaxed font-serif italic">
 					{team.missionQuote}

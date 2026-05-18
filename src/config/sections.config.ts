@@ -189,20 +189,20 @@ export const team: TeamContentConfig = {
 	description: 'Our team is comprised of dedicated professionals who lead with empathy and excellence.',
 	members: [
 		{
-			name: 'Sarah Johnson',
-			role: 'Lead Registered Nurse',
-			image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=400'
+			name: 'Mr. Abdoulie Jawara',
+			role: 'Caregiver & LPN',
+			image: '/images/staff/provider-and-lpn.png'
 		},
 		{
-			name: 'Michael Chen',
-			role: 'Certified Care Specialist',
-			image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400'
+			name: 'Mrs. Fatou Senghore',
+			role: 'Resident Manager',
+			image: '/images/staff/resident-manager.png'
 		},
-		{
+		/*{
 			name: 'Elena Rodriguez',
 			role: 'Nutrition & Wellness Lead',
 			image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=400'
-		}
+		}*/
 	],
 	missionQuote: "'Our mission is to create a nurturing haven where every elder flourishes in dignity, health, and happiness, supported by a family that truly cares.'"
 };
