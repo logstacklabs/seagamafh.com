@@ -190,7 +190,7 @@ export const team: TeamContentConfig = {
 	members: [
 		{
 			name: 'Mr. Abdoulie Jawara',
-			role: 'Caregiver & LPN',
+			role: 'Provider & LPN',
 			image: '/images/staff/provider-and-lpn.png'
 		},
 		{
