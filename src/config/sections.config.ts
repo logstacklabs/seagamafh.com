@@ -198,11 +198,11 @@ export const team: TeamContentConfig = {
 			role: 'Resident Manager',
 			image: '/images/staff/resident-manager.png'
 		},
-		/*{
-			name: 'Elena Rodriguez',
-			role: 'Nutrition & Wellness Lead',
-			image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=400'
-		}*/
+		{
+			name: 'Ms. Awa Dampha',
+			role: 'Registered Nurse',
+			image: '/images/staff/registered-nurse.png'
+		}
 	],
 	missionQuote: "'Our mission is to create a nurturing haven where every elder flourishes in dignity, health, and happiness, supported by a family that truly cares.'"
 };
