@@ -8,8 +8,9 @@ import Team from '@/components/sections/Team';
 import Testimonials from '@/components/sections/Testimonials';
 import Contact from '@/components/sections/Contact';
 import { constructMetadata } from '@/lib/seo';
+import { type Metadata } from 'next';
 
-export const metadata = constructMetadata();
+export const metadata: Metadata = constructMetadata();
 
 export default function Home() {
 	return (

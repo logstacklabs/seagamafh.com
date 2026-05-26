@@ -1,8 +1,9 @@
 import FAQ from '@/components/pages/FAQ'
 import { constructMetadata } from '@/lib/seo';
 import { faq } from '@/config/pages.config';
+import { type Metadata } from 'next';
 
-export const metadata = constructMetadata({
+export const metadata: Metadata = constructMetadata({
 	title: faq.title,
 	description: faq.subtitle,
 	path: '/faq',

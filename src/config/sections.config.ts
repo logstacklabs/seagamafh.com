@@ -23,7 +23,7 @@ export const hero: HeroContentConfig = {
 	ctaPrimary: { text: 'Schedule a Tour', href: '#contact' },
 	ctaSecondary: { text: 'View Our Services', href: '#services' },
 	// Engaging image of caregiver and senior
-	bgImage: '/images/others/elderly_3.png',//https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=2000',
+	bgImage: '/images/others/elderly_3.webp',//https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=2000',
 };
 export const about: AboutContentConfig = {
 	title: 'Rooted in Family,',
@@ -37,7 +37,7 @@ export const about: AboutContentConfig = {
 	],
 	quote: "'Our mission is to provide the highest standard of living where every resident is treated with the love and care we\'d give our own parents.'",
 	// Caregiver image
-	image: '/images/others/elderly_0.png', //'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=800',
+	image: '/images/others/elderly_0.webp', //'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=800',
 };
 export const tour: TourContentConfig = {
 	badge: 'Interactive Experience',
