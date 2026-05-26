@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import { Quote } from 'lucide-react';
+import { LuQuote } from 'react-icons/lu';
+
 import Section from '@/components/layouts/Section';
 import { team } from '@/config/sections.config';
 
@@ -68,7 +69,7 @@ const Team: React.FC = () => {
 				className="mt-16 text-center max-w-3xl mx-auto bg-canvas-card p-10 rounded-4xl shadow-soft border border-canvas-alt relative overflow-hidden"
 			>
 				<div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-brand-primary/50 to-transparent" />
-				<Quote className="text-brand-primary/20 w-12 h-12 mx-auto mb-4" />
+				<LuQuote className="text-brand-primary/20 w-12 h-12 mx-auto mb-4" />
 				<p className="text-xl md:text-2xl font-light text-text-main/80 leading-relaxed font-serif italic">
 					{team.missionQuote}
 				</p>

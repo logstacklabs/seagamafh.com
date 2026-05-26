@@ -1,3 +1,4 @@
+import { IconType } from 'react-icons';
 //export type Locale = string;
 export type BaseURL = string;
 //export type ISODate = string;
@@ -15,12 +16,10 @@ export interface GeoLocation {
 	longitude: string;
 }
 
-export interface SocialLinks {
-	facebook?: string;
-	twitter?: string;
-	instagram?: string;
-	linkedin?: string;
-	youtube?: string;
+export interface SocialLinkDescriptor {
+	label: string;
+	href: string;
+	icon: IconType;
 }
 
 export interface AnalyticsConfig {
@@ -98,7 +97,7 @@ export interface SiteConfig {
 	openingHours: string;
 	priceRange: string;
 	
-	links: SocialLinks;
+	socials: SocialLinkDescriptor[];
 	analytics: AnalyticsConfig; // New Analytics Section
 	favicons: FaviconsConfig;   // New Favicons Section
 	robots: RobotsConfig;

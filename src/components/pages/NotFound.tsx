@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Home, ArrowLeft } from 'lucide-react';
+import { LuHouse, LuArrowLeft } from 'react-icons/lu';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
@@ -21,7 +21,7 @@ const NotFound: React.FC = () => {
 				initial={{ opacity: 0, scale: 0.9 }}
 				animate={{ opacity: 1, scale: 1 }}
 				transition={{ duration: 0.5 }}
-				className="relative z-10 bg-canvas-page p-8 md:p-16 rounded-[3rem] shadow-2xl text-center max-w-2xl w-full mx-auto border-[8px] border-white/10 backdrop-blur-sm"
+				className="relative z-10 bg-canvas-page p-8 md:p-16 rounded-[3rem] shadow-2xl text-center max-w-2xl w-full mx-auto border-8 border-white/10 backdrop-blur-sm"
 			>
 				<motion.div
 					initial={{ y: -20 }}
@@ -46,7 +46,7 @@ const NotFound: React.FC = () => {
 						onClick={() => router.back()}
 						className="flex items-center justify-center gap-2 px-8 py-3 rounded-full border-2 border-brand-primary text-brand-primary font-bold hover:bg-brand-primary/5 transition-colors"
 					>
-						<ArrowLeft size={20} />
+						<LuArrowLeft size={20} />
 						Go Back
 					</button>
 					
@@ -54,7 +54,7 @@ const NotFound: React.FC = () => {
 						href="/"
 						className="flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-brand-primary text-white font-bold hover:bg-brand-primary/90 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
 					>
-						<Home size={20} />
+						<LuHouse size={20} />
 						Home Page
 					</Link>
 				</div>

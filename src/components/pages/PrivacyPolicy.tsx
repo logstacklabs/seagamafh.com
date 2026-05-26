@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Lock } from 'lucide-react';
+import { LuShield, LuLock } from 'react-icons/lu';
 import { legal } from '@/config/pages.config';
 
 const PrivacyPolicy: React.FC = () => {
@@ -17,7 +17,7 @@ const PrivacyPolicy: React.FC = () => {
 					className="text-center mb-16"
 				>
 					<div className="inline-flex items-center justify-center p-3 bg-brand-primary/10 rounded-full mb-6 text-brand-primary">
-						<Shield size={32} />
+						<LuShield size={32} />
 					</div>
 					<h1 className="text-4xl md:text-5xl font-bold text-text-main mb-4">{legal.privacy.title}</h1>
 					<p className="text-text-muted">Last Updated: {legal.privacy.lastUpdated}</p>
@@ -27,7 +27,7 @@ const PrivacyPolicy: React.FC = () => {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ delay: 0.2 }}
-					className="bg-canvas-card p-8 md:p-12 rounded-[2rem] shadow-soft border border-canvas-alt space-y-12"
+					className="bg-canvas-card p-8 md:p-12 rounded-4xl shadow-soft border border-canvas-alt space-y-12"
 				>
 					{legal.privacy.sections.map((section, idx) => (
 						<div key={idx} className="space-y-4">
@@ -44,7 +44,7 @@ const PrivacyPolicy: React.FC = () => {
 					))}
 					
 					<div className="bg-brand-primary/5 p-6 rounded-xl border border-brand-primary/10 mt-8 flex gap-4 items-start">
-						<Lock className="text-brand-primary shrink-0 mt-1" />
+						<LuLock className="text-brand-primary shrink-0 mt-1" />
 						<p className="text-sm text-text-muted">
 							Your trust is paramount. We implement industry-standard security measures to ensure that your personal information and any health-related data remain confidential and secure.
 						</p>

@@ -9,10 +9,10 @@ import Footer from "@/components/layouts/Footer";
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
 	return (
-		<html lang="en" dir="ltr">
+		<html lang="en" dir="ltr" data-scroll-behavior="smooth">
 			<body className="bg-canvas-page min-h-screen text-text-main">
 				<Navbar />
-				<main className="flex-grow">
+				<main className="grow">
 					{children}
 				</main>
 				<JsonLd />

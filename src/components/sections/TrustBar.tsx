@@ -2,13 +2,13 @@
 
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import { BadgeCheck, Activity, Flame, ShieldCheck } from 'lucide-react';
+import { LuBadgeCheck, LuActivity, LuFlame, LuShieldCheck } from 'react-icons/lu';
 import { trust } from '@/config/sections.config';
 
 const TrustBar: React.FC = () => {
 	const getIcon = (iconName: string, size = 32) => {
-		const icons: Record<string, any> = { BadgeCheck, Activity, Flame, ShieldCheck };
-		const IconComponent = icons[iconName] || BadgeCheck;
+		const icons: Record<string, any> = { LuBadgeCheck, LuActivity, LuFlame, LuShieldCheck };
+		const IconComponent = icons[iconName] || LuBadgeCheck;
 		return <IconComponent size={size} />;
 	};
 	

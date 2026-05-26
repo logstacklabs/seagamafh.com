@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence, Variants, PanInfo } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Camera, Maximize2, X, ZoomIn } from 'lucide-react';
+import { LuChevronLeft, LuChevronRight, LuCamera, LuMaximize2, LuX, LuZoomIn } from 'react-icons/lu';
 import { tour } from '@/config/sections.config';
 import { RoomCategory } from '@/types/sections.types';
 
@@ -133,7 +133,7 @@ const VirtualTour: React.FC = () => {
 		<div className="space-y-12">
 			<div className="flex flex-col items-center text-center max-w-3xl mx-auto px-4">
 				<div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-widest mb-4 border border-brand-primary/20">
-					<Camera size={14} /> {tour.badge}
+					<LuCamera size={14} /> {tour.badge}
 				</div>
 				<h2 className="text-4xl md:text-5xl font-bold text-text-main mb-4 tracking-tight">{tour.title}</h2>
 				<p className="text-text-muted text-lg leading-relaxed">{tour.description}</p>
@@ -167,11 +167,11 @@ const VirtualTour: React.FC = () => {
 			<div className="w-full max-w-6xl mx-auto px-0 md:px-4">
 				<motion.div
 					onPanEnd={onPanEnd}
-					className="relative aspect-[5/4] md:aspect-[16/9] w-full rounded-2xl md:rounded-[2.5rem] bg-zinc-900 shadow-2xl border-[3px] md:border-[6px] border-white/50 overflow-hidden group touch-pan-y"
+					className="relative aspect-5/4 md:aspect-video w-full rounded-2xl md:rounded-[2.5rem] bg-zinc-900 shadow-2xl border-[3px] md:border-[6px] border-white/50 overflow-hidden group touch-pan-y"
 					style={{ perspective: '2500px' }}
 				>
 					{/* Ambient Lighting / Vignette */}
-					<div className="absolute inset-0 z-20 pointer-events-none bg-[radial-gradient(circle_at_center,_transparent_0%,_rgba(0,0,0,0.4)_100%)]" />
+					<div className="absolute inset-0 z-20 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
 					
 					{/* Main 3D Scene */}
 					<div className="absolute inset-0 flex items-center justify-center transform-style-3d">
@@ -184,7 +184,7 @@ const VirtualTour: React.FC = () => {
 								animate="center"
 								exit="exit"
 								onClick={() => setIsLightboxOpen(true)}
-								className="absolute w-full h-full rounded-xl md:rounded-[2rem] overflow-hidden shadow-2xl origin-center will-change-transform cursor-zoom-in"
+								className="absolute w-full h-full rounded-xl md:rounded-4xl overflow-hidden shadow-2xl origin-center will-change-transform cursor-zoom-in"
 								style={{
 									transformStyle: "preserve-3d",
 									backfaceVisibility: "hidden",
@@ -207,7 +207,7 @@ const VirtualTour: React.FC = () => {
 									
 									{/* View Indicator Badge */}
 									<div className="absolute top-4 right-4 md:top-8 md:right-8 bg-black/40 backdrop-blur-md text-white/90 text-xs px-3 py-1.5 rounded-full border border-white/20 flex items-center gap-2">
-										<ZoomIn size={12} /> Click to Expand
+										<LuZoomIn size={12} /> Click to Expand
 									</div>
 									
 									{currentImage.hotspots?.map((hs, i) => (
@@ -233,7 +233,7 @@ const VirtualTour: React.FC = () => {
 												>
 													<div className="absolute inset-0 bg-white/30 rounded-full animate-ping" />
 													<div className="absolute inset-1 bg-white/90 backdrop-blur-md rounded-full shadow-[0_0_20px_rgba(255,255,255,0.5)] border border-white flex items-center justify-center transition-transform duration-300 group-hover/hotspot:scale-110">
-														<Maximize2 size={16} className="text-brand-primary" />
+														<LuMaximize2 size={16} className="text-brand-primary" />
 													</div>
 												</button>
 												
@@ -243,7 +243,7 @@ const VirtualTour: React.FC = () => {
 															initial={{ opacity: 0, y: 10, scale: 0.8 }}
 															animate={{ opacity: 1, y: 0, scale: 1 }}
 															exit={{ opacity: 0, y: 5, scale: 0.8 }}
-															className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-max max-w-[240px] px-5 py-3 bg-white/95 backdrop-blur-xl rounded-xl shadow-xl border border-white/40 text-center z-50 pointer-events-none"
+															className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-max max-w-60 px-5 py-3 bg-white/95 backdrop-blur-xl rounded-xl shadow-xl border border-white/40 text-center z-50 pointer-events-none"
 														>
 															<p className="text-sm font-bold text-brand-primary leading-snug">{hs.label}</p>
 															<div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-white/95" />
@@ -265,14 +265,14 @@ const VirtualTour: React.FC = () => {
 							className="pointer-events-auto w-16 h-16 rounded-full bg-black/20 backdrop-blur-lg text-white flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all duration-300 shadow-lg hover:shadow-brand-primary/40 border border-white/20 hover:scale-105 group/nav"
 							aria-label="Previous view"
 						>
-							<ChevronLeft size={28} className="group-hover/nav:-translate-x-0.5 transition-transform" />
+							<LuChevronLeft size={28} className="group-hover/nav:-translate-x-0.5 transition-transform" />
 						</button>
 						<button
 							onClick={handleNext}
 							className="pointer-events-auto w-16 h-16 rounded-full bg-black/20 backdrop-blur-lg text-white flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all duration-300 shadow-lg hover:shadow-brand-primary/40 border border-white/20 hover:scale-105 group/nav"
 							aria-label="Next view"
 						>
-							<ChevronRight size={28} className="group-hover/nav:translate-x-0.5 transition-transform" />
+							<LuChevronRight size={28} className="group-hover/nav:translate-x-0.5 transition-transform" />
 						</button>
 					</div>
 					
@@ -318,7 +318,7 @@ const VirtualTour: React.FC = () => {
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
 						transition={{ duration: 0.3 }}
-						className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-xl p-4 md:p-8"
+						className="fixed inset-0 z-100 flex items-center justify-center bg-black/95 backdrop-blur-xl p-4 md:p-8"
 						onClick={() => setIsLightboxOpen(false)}
 						role="dialog"
 						aria-modal="true"
@@ -329,7 +329,7 @@ const VirtualTour: React.FC = () => {
 							className="absolute top-6 right-6 z-50 p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-all"
 							aria-label="Close lightbox"
 						>
-							<X size={32} />
+							<LuX size={32} />
 						</button>
 						
 						{/* Lightbox Content Container */}
@@ -367,13 +367,13 @@ const VirtualTour: React.FC = () => {
 								onClick={handlePrev}
 								className="hidden md:flex absolute left-0 p-4 text-white/50 hover:text-white hover:scale-110 transition-all"
 							>
-								<ChevronLeft size={48} />
+								<LuChevronLeft size={48} />
 							</button>
 							<button
 								onClick={handleNext}
 								className="hidden md:flex absolute right-0 p-4 text-white/50 hover:text-white hover:scale-110 transition-all"
 							>
-								<ChevronRight size={48} />
+								<LuChevronRight size={48} />
 							</button>
 							
 							{/* Lightbox Footer Info */}

@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
 						className="w-full h-full object-cover brightness-[0.60]"
 					/>
 				</motion.div>
-				<div className="absolute inset-0 bg-gradient-to-b from-brand-primary/50 via-transparent to-canvas-page" />
+				<div className="absolute inset-0 bg-linear-to-b from-brand-primary/50 via-transparent to-canvas-page" />
 			</div>
 			
 			<div className="relative z-10 text-center px-4 max-w-5xl">
@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
 					
 					<motion.h1 variants={itemVariants} className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-[1.1] tracking-tight drop-shadow-xl">
 						{hero.title} <br />
-						<span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-tertiary to-white">
+						<span className="text-transparent bg-clip-text bg-linear-to-r from-brand-tertiary to-white">
               {hero.titleAccent}
             </span>
 					</motion.h1>

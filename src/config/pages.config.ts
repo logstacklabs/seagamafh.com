@@ -6,8 +6,8 @@ import {
 
 export const faq: FaqContentConfig = {
 	title: "Common Questions",
-		subtitle: "Everything you need to know about life at Seagam Adult Family Home.",
-		items: [
+	subtitle: "Everything you need to know about life at Seagam Adult Family Home.",
+	items: [
 		{
 			question: "How does an Adult Family Home differ from a Nursing Home?",
 			answer: "Seagam Adult Family Home provides a more intimate, residential setting with a higher staff-to-resident ratio (typically 1:6 or better) compared to large nursing facilities. This allows for personalized, family-style care in a real home environment, rather than a clinical institution."

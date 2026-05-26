@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FileText, AlertTriangle } from 'lucide-react';
+import { LuFileText, LuTriangleAlert } from 'react-icons/lu';
 import { legal } from '@/config/pages.config';
 
 const TermsOfUse: React.FC = () => {
@@ -17,7 +17,7 @@ const TermsOfUse: React.FC = () => {
 					className="text-center mb-16"
 				>
 					<div className="inline-flex items-center justify-center p-3 bg-brand-secondary/10 rounded-full mb-6 text-brand-secondary">
-						<FileText size={32} />
+						<LuFileText size={32} />
 					</div>
 					<h1 className="text-4xl md:text-5xl font-bold text-text-main mb-4">{legal.terms.title}</h1>
 					<p className="text-text-muted">Last Updated: {legal.terms.lastUpdated}</p>
@@ -27,7 +27,7 @@ const TermsOfUse: React.FC = () => {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ delay: 0.2 }}
-					className="bg-canvas-card p-8 md:p-12 rounded-[2rem] shadow-soft border border-canvas-alt space-y-12"
+					className="bg-canvas-card p-8 md:p-12 rounded-4xl shadow-soft border border-canvas-alt space-y-12"
 				>
 					{legal.terms.sections.map((section, idx) => (
 						<div key={idx} className="space-y-4">
@@ -43,7 +43,7 @@ const TermsOfUse: React.FC = () => {
 							</div>
 							{section.title.includes('Disclaimer') && (
 								<div className="bg-status-error/50 border border-red-200 p-4 rounded-xl flex gap-3 items-center text-red-800 text-sm font-semibold">
-									<AlertTriangle className="shrink-0" size={20} />
+									<LuTriangleAlert className="shrink-0" size={20} />
 									<span>Not Medical Advice</span>
 								</div>
 							)}

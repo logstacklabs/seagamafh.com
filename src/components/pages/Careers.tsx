@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Briefcase, MapPin, Clock, ChevronDown, CheckCircle2, SearchX, Sparkles } from 'lucide-react';
+import { LuBriefcase, LuMapPin, LuClock, LuChevronDown, LuCircleCheckBig, LuSearchX, LuSparkles } from 'react-icons/lu';
 import { careers } from '@/config/pages.config';
 import { contact } from '@/config/sections.config';
 
@@ -23,7 +23,7 @@ const Careers: React.FC = () => {
 					className="text-center mb-16"
 				>
 					<div className="inline-flex items-center justify-center p-3 bg-brand-secondary/10 rounded-full mb-6 text-brand-secondary">
-						<Briefcase size={32} />
+						<LuBriefcase size={32} />
 					</div>
 					<h1 className="text-4xl md:text-5xl font-bold text-text-main mb-4">{careers.title}</h1>
 					<p className="text-xl text-text-muted max-w-2xl mx-auto">{careers.subtitle}</p>
@@ -37,13 +37,13 @@ const Careers: React.FC = () => {
 						className="relative overflow-hidden bg-canvas-card rounded-[2.5rem] border border-canvas-alt shadow-medium p-8 md:p-16 text-center max-w-3xl mx-auto"
 					>
 						{/* Decorative Elements */}
-						<div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-primary via-brand-tertiary to-brand-primary" />
+						<div className="absolute top-0 left-0 w-full h-1.5 bg-linear-to-r from-brand-primary via-brand-tertiary to-brand-primary" />
 						<div className="absolute -top-24 -right-24 w-48 h-48 bg-brand-primary/5 rounded-full blur-3xl pointer-events-none" />
 						<div className="absolute -bottom-24 -left-24 w-48 h-48 bg-brand-secondary/5 rounded-full blur-3xl pointer-events-none" />
 						
 						<div className="relative z-10 flex flex-col items-center">
 							<div className="w-24 h-24 bg-canvas-page rounded-full shadow-inner flex items-center justify-center mb-8 border border-canvas-alt">
-								<SearchX size={40} className="text-text-muted/50" />
+								<LuSearchX size={40} className="text-text-muted/50" />
 							</div>
 							
 							<h2 className="text-3xl font-bold text-text-main mb-4">No Current Openings</h2>
@@ -55,7 +55,7 @@ const Careers: React.FC = () => {
 							
 							<div className="bg-brand-primary/5 rounded-2xl p-6 md:p-8 w-full max-w-md border border-brand-primary/10 hover:border-brand-primary/20 transition-colors">
 								<div className="flex flex-col items-center gap-3">
-									<Sparkles size={24} className="text-brand-tertiary mb-1" />
+									<LuSparkles size={24} className="text-brand-tertiary mb-1" />
 									<p className="font-medium text-text-main">Interested in future opportunities?</p>
 									<p className="text-sm text-text-muted mb-4">Send us your resume and we'll keep it on file.</p>
 									<a
@@ -76,7 +76,7 @@ const Careers: React.FC = () => {
 								initial={{ opacity: 0, y: 20 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ delay: index * 0.1 }}
-								className={`bg-canvas-card rounded-[2rem] border transition-all duration-300 overflow-hidden ${
+								className={`bg-canvas-card rounded-4xl border transition-all duration-300 overflow-hidden ${
 									expandedJob === job.id
 										? 'border-brand-primary shadow-medium ring-1 ring-brand-primary/20'
 										: 'border-canvas-alt shadow-soft hover:border-brand-primary/30'
@@ -89,8 +89,8 @@ const Careers: React.FC = () => {
 									<div>
 										<h3 className="text-2xl font-bold text-text-main mb-2">{job.title}</h3>
 										<div className="flex flex-wrap gap-4 text-sm text-text-muted font-medium">
-											<span className="flex items-center gap-1"><MapPin size={16} /> Kent, WA</span>
-											<span className="flex items-center gap-1"><Clock size={16} /> Full-Time / Part-Time</span>
+											<span className="flex items-center gap-1"><LuMapPin size={16} /> Kent, WA</span>
+											<span className="flex items-center gap-1"><LuClock size={16} /> Full-Time / Part-Time</span>
 										</div>
 										<p className="mt-3 text-text-muted md:hidden">{job.shortDescription}</p>
 									</div>
@@ -100,7 +100,7 @@ const Careers: React.FC = () => {
 										<div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
 											expandedJob === job.id ? 'bg-brand-primary text-white' : 'bg-canvas-alt text-brand-primary'
 										}`}>
-											<ChevronDown size={20} className={`transition-transform duration-300 ${expandedJob === job.id ? 'rotate-180' : ''}`} />
+											<LuChevronDown size={20} className={`transition-transform duration-300 ${expandedJob === job.id ? 'rotate-180' : ''}`} />
 										</div>
 									</div>
 								</button>
@@ -123,7 +123,7 @@ const Careers: React.FC = () => {
 														<ul className="space-y-2 mb-6">
 															{job.responsibilities.map((req, i) => (
 																<li key={i} className="flex items-start gap-2 text-text-muted">
-																	<CheckCircle2 size={18} className="text-brand-secondary shrink-0 mt-0.5" />
+																	<LuCircleCheckBig size={18} className="text-brand-secondary shrink-0 mt-0.5" />
 																	<span className="text-sm">{req}</span>
 																</li>
 															))}

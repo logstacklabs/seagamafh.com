@@ -250,7 +250,7 @@ export const contact: ContactContentConfig = {
 	},
 };
 export const footer: FooterContentConfig = {
-	copy: '©2026 Seagam AFH LLC. All rights reserved.',
+	copy: '©2026 Seagam AFH LLC. All rights reserved. | Licensed by DSHS',
 	links: [
 		{ text: 'Privacy Policy', href: '/privacy' },
 		{ text: 'Terms of Use', href: '/terms' },

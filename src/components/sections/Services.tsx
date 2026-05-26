@@ -2,14 +2,15 @@
 
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import { Clock, HeartPulse, Utensils, Accessibility } from 'lucide-react';
+import { LuClock, LuHeartPulse, LuUtensils, LuAccessibility } from "react-icons/lu";
+
 import Section from '@/components/layouts/Section';
 import { services } from '@/config/sections.config';
 
 const Services: React.FC = () => {
 	const getIcon = (iconName: string, size = 32) => {
-		const icons: Record<string, any> = { Clock, HeartPulse, Utensils, Accessibility };
-		const IconComponent = icons[iconName] || Clock;
+		const icons: Record<string, any> = { LuClock, LuHeartPulse, LuUtensils, LuAccessibility };
+		const IconComponent = icons[iconName] || LuClock;
 		return <IconComponent size={size} />;
 	};
 	
@@ -33,7 +34,7 @@ const Services: React.FC = () => {
 	};
 	
 	return (
-		<Section id="services" className="bg-canvas-alt/70 rounded-[3rem] my-8 !py-16">
+		<Section id="services" className="bg-canvas-alt/70 rounded-[3rem] my-8 py-16!">
 			<div className="text-center mb-16 max-w-3xl mx-auto">
 				<h2 className="text-4xl font-bold mb-4 text-text-main tracking-tight">{services.title}</h2>
 				<p className="text-lg text-text-muted">{services.description}</p>

@@ -5,11 +5,11 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import useWeb3Forms from '@web3forms/react';
-import { MapPin, Phone, Mail, Calendar } from 'lucide-react';
-
 import { publicEnv } from "@/env/public";
 import Section from '@/components/layouts/Section';
 import { contact } from '@/config/sections.config';
+
+import { FiMapPin, FiPhone, FiMail, FiCalendar } from 'react-icons/fi';
 
 type FormValues = {
 	name: string;
@@ -22,7 +22,7 @@ type FormValues = {
 
 const Contact: React.FC = () => {
 	const encodedAddress = encodeURIComponent(contact.mapAddress);
-	const mapEmbedUrl = `https://maps.google.com/maps?width=100%25&height=600&hl=en&q=${encodedAddress}&t=&z=14&ie=UTF8&iwloc=B&output=embed`;
+	const mapEmbedUrl = `https://maps.google.com/maps?width=100%25&height=600&hl=en&q=${encodedAddress}&t=&z=14&ie=UTF8&iwloc=B&maptype=satellite&output=embed`;
 	
 	//const { register } = useForm();
 	
@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
 					initial={{ opacity: 0, x: -30 }}
 					whileInView={{ opacity: 1, x: 0 }}
 					transition={{ duration: 0.8 }}
-					className="bg-canvas-card p-8 md:p-10 rounded-[2rem] shadow-soft border border-canvas-alt"
+					className="bg-canvas-card p-8 md:p-10 rounded-4xl shadow-soft border border-canvas-alt"
 				>
 					<h2 className="text-3xl font-bold mb-6 text-text-main">{contact.title}</h2>
 					<form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
@@ -145,7 +145,7 @@ const Contact: React.FC = () => {
 										
 									})}
 								/>
-								<Calendar className="absolute right-5 top-1/2 -translate-y-1/2 text-text-muted/60 pointer-events-none" size={18} />
+								<FiCalendar className="absolute right-5 top-1/2 -translate-y-1/2 text-text-muted/60 pointer-events-none" size={18} />
 								{errors.date && <p className="error">{errors.date.message}</p>}
 							</div>
 						</div>
@@ -199,25 +199,25 @@ const Contact: React.FC = () => {
 					<div className="grid grid-cols-1 gap-4">
 						<div className="flex items-center gap-4 p-4 bg-canvas-card rounded-2xl shadow-soft border border-canvas-alt hover:shadow-md transition-shadow">
 							<div className="bg-brand-primary/10 p-3 rounded-full text-brand-primary">
-								<MapPin className="shrink-0 w-5 h-5" />
+								<FiMapPin className="shrink-0 w-5 h-5" />
 							</div>
 							<div><h4 className="font-bold text-sm text-text-main">Location</h4><p className="text-text-muted text-sm">{contact.address}</p></div>
 						</div>
 						<div className="flex items-center gap-4 p-4 bg-canvas-card rounded-2xl shadow-soft border border-canvas-alt hover:shadow-md transition-shadow">
 							<div className="bg-brand-primary/10 p-3 rounded-full text-brand-primary">
-								<Phone className="shrink-0 w-5 h-5" />
+								<FiPhone className="shrink-0 w-5 h-5" />
 							</div>
 							<div><h4 className="font-bold text-sm text-text-main">Call Us</h4><p className="text-text-muted text-sm">{contact.phone}</p></div>
 						</div>
 						<div className="flex items-center gap-4 p-4 bg-canvas-card rounded-2xl shadow-soft border border-canvas-alt hover:shadow-md transition-shadow">
 							<div className="bg-brand-primary/10 p-3 rounded-full text-brand-primary">
-								<Mail className="shrink-0 w-5 h-5" />
+								<FiMail className="shrink-0 w-5 h-5" />
 							</div>
 							<div><h4 className="font-bold text-sm text-text-main">Email</h4><p className="text-text-muted text-sm">{contact.email}</p></div>
 						</div>
 					</div>
 					
-					<div className="aspect-video w-full rounded-2xl overflow-hidden shadow-xl border-[4px] border-white ring-1 ring-black/5 transform hover:scale-[1.02] transition-transform duration-500">
+					<div className="aspect-video w-full rounded-2xl overflow-hidden shadow-xl border-4 border-white ring-1 ring-black/5 transform hover:scale-[1.02] transition-transform duration-500">
 						<iframe
 							width="100%"
 							height="100%"

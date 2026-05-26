@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { HelpCircle, Plus, Minus } from 'lucide-react';
+import { LuCircleHelp, LuPlus, LuMinus } from 'react-icons/lu';
 import Link from 'next/link'
 import { faq } from '@/config/pages.config';
 
@@ -20,7 +20,7 @@ const FAQ: React.FC = () => {
 					className="text-center mb-16"
 				>
 					<div className="inline-flex items-center justify-center p-3 bg-brand-tertiary/20 rounded-full mb-6 text-brand-primary">
-						<HelpCircle size={32} />
+						<LuCircleHelp size={32} />
 					</div>
 					<h1 className="text-4xl md:text-5xl font-bold text-text-main mb-4">{faq.title}</h1>
 					<p className="text-xl text-text-muted max-w-xl mx-auto">{faq.subtitle}</p>
@@ -41,7 +41,7 @@ const FAQ: React.FC = () => {
 							>
 								<span className="font-bold text-lg text-text-main pr-8">{item.question}</span>
 								<span className={`shrink-0 p-2 rounded-full ${openIndex === index ? 'bg-brand-primary text-white' : 'bg-canvas-alt text-brand-primary'}`}>
-                  {openIndex === index ? <Minus size={18} /> : <Plus size={18} />}
+                  {openIndex === index ? <LuMinus size={18} /> : <LuPlus size={18} />}
                 </span>
 							</button>
 							

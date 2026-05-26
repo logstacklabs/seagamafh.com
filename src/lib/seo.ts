@@ -60,7 +60,7 @@ export function constructMetadata({
 				url: siteConfig.tcImage || image,
 				alt: `${pageTitle} Twitter Card Image`,
 			},
-			creator: siteConfig.links.twitter,
+			creator: '@seagamafh',
 		},
 		
 		icons: {

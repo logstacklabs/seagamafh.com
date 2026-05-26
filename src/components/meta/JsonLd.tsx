@@ -47,10 +47,7 @@ export default function JsonLd() {
 		],
 		priceRange: siteConfig.priceRange,
 		sameAs: [
-			siteConfig.links.facebook,
-			siteConfig.links.twitter,
-			siteConfig.links.instagram,
-			siteConfig.links.linkedin,
+			siteConfig.socials.map((social) => social.href),
 		].filter(Boolean), // Removes empty strings if social links are missing
 	};
 	

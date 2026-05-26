@@ -3,6 +3,7 @@ import {
 	BaseURL
 } from '@/types/seo.types';
 import { publicEnv } from '@/env/public';
+import { FiInstagram, FiFacebook, FiTwitter } from 'react-icons/fi';
 
 export const baseURL: BaseURL = publicEnv.SITE_BASE_URL;
 
@@ -11,7 +12,7 @@ export const siteConfig: SiteConfig = {
 	subName: 'AFH',
 	fullName: 'Seagam AFH',
 	description:
-		'A premier Adult Family Care Home providing compassionate, 24/7 personalized care in Seattle, WA.',
+		'Experience the tranquility and confidence that comes with personalized, high-quality care. At Seagam Adult Family Home, we provide a warm, secure, and compassionate family-style environment where elders flourish with dignity.',
 	url: `${baseURL}`,
 	locale: 'en_US',
 	logo: '/images/others/logo.png',
@@ -19,7 +20,7 @@ export const siteConfig: SiteConfig = {
 	ogImage: `${baseURL}/icons/og-img.png`,
 	tcImage: `${baseURL}/icons/tc-img.png`,
 	keywords: [
-		'Adult Family Home', 'Nursing Home', 'Senior Care', 'Adult Family Care', 'Elderly Nursing Home', 'Quality Senior Caregiving Services', 'adult family care home near me', 'adult foster care near me', 'senior care home near me', 'elderly care home near me', 'assisted living near me', 'local adult care home', 'neighborhood senior care', 'community senior living', 'residential care near me'
+		'Adult Family Home', 'Nursing Home', 'Senior Care', 'Adult Family Care', 'Elderly Nursing Home', 'Senior care, near me', 'Quality Senior Caregiving Services', 'adult family care home near me', 'adult foster care near me', 'senior care home near me', 'elderly care home near me', 'assisted living near me', 'local adult care home', 'neighborhood senior care', 'community senior living', 'residential care near me'
 	],
 	themeColor: '#F9F7F2',
 	
@@ -47,10 +48,11 @@ export const siteConfig: SiteConfig = {
 	openingHours: 'Mo-Su 00:00-24:00',
 	priceRange: '$$$',
 	
-	links: {
-		facebook: 'https://facebook.com/seagamafh',
-		twitter: 'https://twitter.com/seagamafh',
-	},
+	socials: [
+		{ label: 'instagram', href: 'https://instagram.com/seagamafh', icon: FiInstagram },
+		{ label: 'facebook', href: 'https://facebook.com/seagamafh', icon: FiFacebook },
+		{ label: 'twitter', href: 'https://twitter.com/seagamafh', icon: FiTwitter }
+	],
 	
 	// 1. ANALYTICS CONFIGURATION
 	analytics: {

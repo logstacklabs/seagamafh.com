@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
+import { LuCircleCheckBig } from "react-icons/lu";
 import Section from '@/components/layouts/Section';
 import { about } from '@/config/sections.config';
 
@@ -50,8 +50,8 @@ const About: React.FC = () => {
 					>
 						{about.features.map((item, idx) => (
 							<motion.div key={idx} variants={itemVariants} className="flex items-center gap-3 p-3 rounded-xl hover:bg-canvas-card transition-colors duration-300">
-								<div className="flex-shrink-0 w-8 h-8 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center">
-									<CheckCircle2 className="w-5 h-5" />
+								<div className="shrink-0 w-8 h-8 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center">
+									<LuCircleCheckBig className="w-5 h-5" />
 								</div>
 								<span className="font-medium text-text-main/90">{item}</span>
 							</motion.div>
@@ -81,7 +81,7 @@ const About: React.FC = () => {
 					<img
 						src={about.image}
 						alt="About Section Image"
-						className="relative z-10 rounded-[2rem] shadow-medium w-full h-[600px] object-cover transition-transform duration-700 hover:scale-[1.01]"
+						className="relative z-10 rounded-4xl shadow-medium w-full h-150 object-cover transition-transform duration-700 hover:scale-[1.01]"
 					/>
 				</motion.div>
 			</div>

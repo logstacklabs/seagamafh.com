@@ -10,7 +10,7 @@ const Testimonials: React.FC = () => {
 	const duplicatedItems = [...testimonials.items, ...testimonials.items];
 	
 	return (
-		<Section id="testimonials" className="bg-canvas-alt/50 overflow-hidden !py-16 rounded-[3rem] my-8">
+		<Section id="testimonials" className="bg-canvas-alt/50 overflow-hidden py-16! rounded-[3rem] my-8">
 			<div className="flex flex-col items-center mb-12">
 				<h2 className="text-3xl md:text-4xl font-bold text-center text-text-main">{testimonials.title}</h2>
 			</div>
@@ -29,7 +29,7 @@ const Testimonials: React.FC = () => {
 					{duplicatedItems.map((t, idx) => (
 						<div
 							key={idx}
-							className="flex-shrink-0 w-[400px] h-[266px] bg-canvas-card p-8 rounded-3xl shadow-soft border border-white hover:border-brand-primary/20 hover:shadow-medium transition-all duration-300 flex flex-col justify-between"
+							className="shrink-0 w-100 h-66.5 bg-canvas-card p-8 rounded-3xl shadow-soft border border-white hover:border-brand-primary/20 hover:shadow-medium transition-all duration-300 flex flex-col justify-between"
 						>
 							<div className="relative overflow-hidden">
 								<span className="absolute -top-2 -left-1 text-4xl text-brand-tertiary/40 font-serif leading-none">“</span>

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { LuMenu, LuX } from 'react-icons/lu';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
 				</a>
 				
 				{/* Desktop Menu - Optimized for Tablet (md) & Desktop (lg+) */}
-				<div className="hidden md:flex items-center gap-1 lg:gap-6 xl:gap-8 shrink-1 min-w-0 justify-end flex-1">
+				<div className="hidden md:flex items-center gap-1 lg:gap-6 xl:gap-8 shrink min-w-0 justify-end flex-1">
 					<div className="flex items-center bg-canvas-card/50 rounded-full px-1 py-1 border border-transparent lg:border-gray-100/50">
 						{navigations.map((link) => {
 							const isActive = activeSection === link.id || (link.href === location);
@@ -87,7 +87,7 @@ const Navbar: React.FC = () => {
 					className="md:hidden p-2 text-brand-primary hover:bg-brand-primary/10 rounded-full transition-colors"
 					onClick={() => setIsOpen(!isOpen)}
 					aria-label="Toggle menu">
-					{isOpen ? <X size={24} /> : <Menu size={24} />}
+					{isOpen ? <LuX size={24} /> : <LuMenu size={24} />}
 				</button>
 			</div>
 			
