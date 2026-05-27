@@ -11,8 +11,8 @@ export const siteConfig: SiteConfig = {
 	name: 'Seagam',
 	subName: 'AFH',
 	fullName: 'Seagam AFH',
-	description:
-		'Experience the tranquility and confidence that comes with personalized, high-quality care. At Seagam Adult Family Home, we provide a warm, secure, and compassionate family-style environment where elders flourish with dignity.',
+	description: 'Seagam Adult Family Home provides compassionate, family-style elder care in a safe, comfortable, and dignified home environment.',
+		//'Experience the tranquility and confidence that comes with personalized, high-quality care. At Seagam Adult Family Home, we provide a warm, secure, and compassionate family-style environment where elders flourish with dignity.',
 	url: `${baseURL}`,
 	locale: 'en_US',
 	logo: '/images/others/logo.png',
@@ -20,7 +20,7 @@ export const siteConfig: SiteConfig = {
 	ogImage: `${baseURL}/icons/og-img.png`,
 	tcImage: `${baseURL}/icons/tc-img.png`,
 	keywords: [
-		'Adult Family Home', 'Nursing Home', 'Senior Care', 'Adult Family Care', 'Elderly Nursing Home', 'Senior care, near me', 'Quality Senior Caregiving Services', 'adult family care home near me', 'adult foster care near me', 'senior care home near me', 'elderly care home near me', 'assisted living near me', 'local adult care home', 'neighborhood senior care', 'community senior living', 'residential care near me'
+		'Adult Family Home', 'Nursing Home', 'Senior Care', 'Adult Family Care', 'Elderly Nursing Home', 'Senior care, near me', 'Quality Senior Caregiving Services', 'adult family care home near me', 'adult foster care near me', 'senior care home near me', 'elderly care home near me', 'assisted living near me', 'local adult care home', 'neighborhood senior care', 'community senior living', 'residential care near me', 'nursing home near me', 'Senior care home near me'
 	],
 	themeColor: '#F9F7F2',
 	

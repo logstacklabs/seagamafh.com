@@ -38,11 +38,7 @@ const Navbar: React.FC = () => {
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, [isHomePage]);
 	
-	useEffect(() => {
-		if (!isHomePage) {
-			if (location === '/faq') setActiveSection('faq');
-		}
-	}, [location, isHomePage]);
+	//useEffect(() => { if (!isHomePage) { if (location === '/faq') setActiveSection('faq'); } }, [location, isHomePage]);
 	
 	return (
 		<nav className="fixed top-0 left-0 right-0 z-50 bg-canvas-page/90 backdrop-blur-md shadow-soft py-3 lg:py-4 transition-all duration-300">

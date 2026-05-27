@@ -225,6 +225,7 @@ const Contact: React.FC = () => {
 							loading="lazy"
 							allowFullScreen
 							src={mapEmbedUrl}
+							title="Seagam AFH Address/Location"
 							className="grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
 						/>
 					</div>
