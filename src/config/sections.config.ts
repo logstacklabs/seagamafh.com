@@ -260,7 +260,7 @@ export const footer: FooterContentConfig = {
 };
 
 
-export const VirtualTourImages = {
+/*export const VirtualTourImages = {
 	'living-rooms': [
 		'1.jpg', '2.jpg', '3.jpg', '4.jpg',
 		'5.jpg', '6.jpg', '7.jpg', '8.jpg',
@@ -283,4 +283,4 @@ export const VirtualTourImages = {
 		'1.jpg', '2.jpg', '3.jpg', '4.jpg',
 		'5.jpg', '6.jpg', '7.jpg', '8.jpg'
 	],
-}
+}*/
