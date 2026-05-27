@@ -14,22 +14,15 @@ export default function Analytics() {
 			{/* --- Google Analytics 4 --- */}
 			{googleAnalyticsId && (
 				<>
-					<Script
-						strategy="afterInteractive"
-						src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
-					/>
-					<Script
-						id="google-analytics"
-						strategy="afterInteractive"
+					<Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} />
+					<Script id="google-analytics" strategy="afterInteractive"
 						dangerouslySetInnerHTML={{
 							__html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${googleAnalyticsId}', {
-                  page_path: window.location.pathname,
-                });
-              `,
+								window.dataLayer = window.dataLayer || [];
+								function gtag(){dataLayer.push(arguments);}
+								gtag('js', new Date());
+								gtag('config', '${googleAnalyticsId}');
+							`,
 						}}
 					/>
 				</>
@@ -37,12 +30,7 @@ export default function Analytics() {
 			
 			{/* --- Cloudflare Web Analytics --- */}
 			{cloudflareToken && (
-				<Script
-					defer
-					strategy="afterInteractive"
-					src="https://static.cloudflareinsights.com/beacon.min.js"
-					data-cf-beacon={`{"token": "${cloudflareToken}"}`}
-				/>
+				<Script src="https://static.cloudflareinsights.com/beacon.min.js" strategy="afterInteractive" async defer data-cf-beacon={JSON.stringify({token: cloudflareToken, })} crossOrigin="anonymous" />
 			)}
 		</>
 	);

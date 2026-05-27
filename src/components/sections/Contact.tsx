@@ -21,11 +21,30 @@ type FormValues = {
 };
 
 const Contact: React.FC = () => {
+	/*const { register } = useForm();
+	const [isVisible, setIsVisible] = useState(false);
+	const containerRef = useRef<HTMLDivElement | null>(null);
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					setIsVisible(true);
+					observer.disconnect();
+				}
+			},
+			{ rootMargin: "200px", }
+		);
+
+		if (containerRef.current) {
+			observer.observe(containerRef.current);
+		}
+
+		return () => observer.disconnect();
+	}, []);
 	const encodedAddress = encodeURIComponent(contact.mapAddress);
-	const mapEmbedUrl = `https://maps.google.com/maps?width=100%25&height=600&hl=en&q=${encodedAddress}&t=&z=14&ie=UTF8&iwloc=B&maptype=satellite&output=embed`;
-	
-	//const { register } = useForm();
-	
+	//const mapEmbedUrl = `https://maps.google.com/maps?width=100%25&height=600&hl=en&q=${encodedAddress}&t=&z=14&ie=UTF8&iwloc=B&output=embed`;
+	const mapEmbedUrl = `https://maps.google.com/maps?q=${encodedAddress}&z=15&output=embed`;*/
+
 	const {
 		register,
 		handleSubmit,
@@ -216,19 +235,26 @@ const Contact: React.FC = () => {
 							<div><h4 className="font-bold text-sm text-text-main">Email</h4><p className="text-text-muted text-sm">{contact.email}</p></div>
 						</div>
 					</div>
-					
-					<div className="aspect-video w-full rounded-2xl overflow-hidden shadow-xl border-4 border-white ring-1 ring-black/5 transform hover:scale-[1.02] transition-transform duration-500">
-						<iframe
-							width="100%"
-							height="100%"
-							style={{ border: 0 }}
-							loading="lazy"
-							allowFullScreen
-							src={mapEmbedUrl}
-							title="Seagam AFH Address/Location"
-							className="grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
-						/>
-					</div>
+
+					{/*<div ref={containerRef} className="aspect-video w-full rounded-2xl overflow-hidden shadow-xl border-4 border-white ring-1 ring-black/5 transform hover:scale-[1.02] transition-transform duration-500">
+						{isVisible ? (
+							<iframe
+								src={mapEmbedUrl}
+								title="Seagam AFH Location"
+								width="100%"
+								height="100%"
+								loading="lazy"
+								allowFullScreen
+								style={{ border: 0 }}
+								className="transition-all duration-700 hover:grayscale-0 grayscale-[0.15]"
+								referrerPolicy="no-referrer-when-downgrade"
+							/>
+						) : (
+							<div className="flex h-full w-full items-center justify-center bg-neutral-100 text-sm text-neutral-500">
+								Loading map...
+							</div>
+						)}
+					</div>*/}
 				</motion.div>
 			</div>
 		</Section>
