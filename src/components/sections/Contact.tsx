@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import useWeb3Forms from '@web3forms/react';
 import { publicEnv } from "@/env/public";
 import Section from '@/components/layouts/Section';
@@ -21,7 +21,6 @@ type FormValues = {
 };
 
 const Contact: React.FC = () => {
-	/*const { register } = useForm();
 	const [isVisible, setIsVisible] = useState(false);
 	const containerRef = useRef<HTMLDivElement | null>(null);
 	useEffect(() => {
@@ -43,7 +42,7 @@ const Contact: React.FC = () => {
 	}, []);
 	const encodedAddress = encodeURIComponent(contact.mapAddress);
 	//const mapEmbedUrl = `https://maps.google.com/maps?width=100%25&height=600&hl=en&q=${encodedAddress}&t=&z=14&ie=UTF8&iwloc=B&output=embed`;
-	const mapEmbedUrl = `https://maps.google.com/maps?q=${encodedAddress}&z=15&output=embed`;*/
+	const mapEmbedUrl = `https://maps.google.com/maps?q=${encodedAddress}&z=15&output=embed`;
 
 	const {
 		register,
@@ -236,7 +235,7 @@ const Contact: React.FC = () => {
 						</div>
 					</div>
 
-					{/*<div ref={containerRef} className="aspect-video w-full rounded-2xl overflow-hidden shadow-xl border-4 border-white ring-1 ring-black/5 transform hover:scale-[1.02] transition-transform duration-500">
+					<div ref={containerRef} className="aspect-video w-full rounded-2xl overflow-hidden shadow-xl border-4 border-white ring-1 ring-black/5 transform hover:scale-[1.02] transition-transform duration-500">
 						{isVisible ? (
 							<iframe
 								src={mapEmbedUrl}
@@ -254,7 +253,7 @@ const Contact: React.FC = () => {
 								Loading map...
 							</div>
 						)}
-					</div>*/}
+					</div>
 				</motion.div>
 			</div>
 		</Section>
